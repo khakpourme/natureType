@@ -24,9 +24,11 @@ def getRGB(df, fn):
     df[fn + ' RGB'] = (65536 * df.R) + (256 * df.G) + df.B
     return df[fn + ' RGB']
 
-# Function to get raster file path, number of rasters as lenght, name of the raster function and the shapefile path of the training dataset
+# Function to get raster file path, number of rasters as lenght, name of the raster function and the shapefile path of
+# the training dataset
 def rasterfile_path(arg2, arg3, arg4, arg5):
-    rasterpath, lenght, fnlist, shapefilepath = req.get_request(arg2, arg3, arg4, arg5) # passing variables are the bbox coordinates
+    rasterpath, lenght, fnlist, shapefilepath = req.get_request(arg2, arg3, arg4, arg5) # passing variables are the
+    # bbox coordinates
     return rasterpath, lenght, fnlist, shapefilepath
 
 def world2Pixel(geoMatrix, x, y):
@@ -154,7 +156,7 @@ def main(arg2, arg3, arg4, arg5):
     trainingfinaldf = pd.concat(trainingdflist, axis=1)
     trainingfinaldf = pd.DataFrame(trainingfinaldf)
     trainingfinaldf.insert(loc=0, column='NATYP_ID', value=column_values)
-    trainingfinaldf.to_csv("trainingfinalRGB.csv")
+    trainingfinaldf.to_csv("/Data/trainingfinalRGB.csv")
     print 'Dataset Created...'
 
     predeictiondflist = []
@@ -168,7 +170,7 @@ def main(arg2, arg3, arg4, arg5):
     # print len(pointlist)
     predictionfinaldf = predictionfinaldf[(predictionfinaldf.iloc[:, 1:-2] != 0).any(axis=1)].reset_index(drop=True)
     predictionfinaldf = pd.DataFrame(predictionfinaldf)
-    predictionfinaldf.to_csv("predictionfinalRGB.csv")
+    predictionfinaldf.to_csv("/Data/predictionfinalRGB.csv")
     print 'Prediction Dataset Created...'
 
     VIRF.training_model() # calling Random forest

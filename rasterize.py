@@ -5,9 +5,9 @@ import subprocess
 def rasterize(shapefilepath):
 
     InputVector = shapefilepath
-    OutputImage = 'pointResult.tiff'
+    OutputImage = '/Data/pointResult.tiff'
 
-    RefImage = 'NaturalColorwithDRA.tiff'
+    RefImage = '/Data/NaturalColorwithDRA.tiff'
 
     gdalformat = 'GTiff'
     datatype = gdal.GDT_Byte

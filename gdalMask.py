@@ -1,7 +1,7 @@
 from osgeo import gdal
 
 def gdalMask(rasterpath):
-    vector_layer = "area.shp"
+    vector_layer = "/Data/area.shp"
     raster_layer = rasterpath
     target_layer = rasterpath+"mask.tif"
 
