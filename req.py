@@ -1,4 +1,4 @@
-from requests.packages.urllib3.util import retry
+from urllib3.util import retry
 from requests import adapters
 import requests
 import os.path

@@ -7,7 +7,7 @@ import pandas as pd
 import csv
 from affine import Affine
 import req
-# import VIRF # This module should be brought here!
+import VIRF
 import shapefilecrop
 import pointWithinPolygon
 
